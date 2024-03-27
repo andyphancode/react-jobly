@@ -1,6 +1,7 @@
 import React from "react";
 import { render } from "@testing-library/react";
 import JobCard from "./JobCard";
+import { UserProvider } from "../../testProvider";
 
 it("matches snapshot", function () {
     let job = {
@@ -10,8 +11,11 @@ it("matches snapshot", function () {
         companyName: "street"
     };
 
-    const { asFragment } = render (
-        <JobCard job={job}/>
+    const { asFragment } = render(
+        <UserProvider>
+            <JobCard job={job}/>            
+        </UserProvider>
+
     );
     expect(asFragment()).toMatchSnapshot();
 });

@@ -21,6 +21,12 @@ exports[`matches snapshot 1`] = `
         <br />
         Equity: NaN%
       </p>
+      <button
+        class="btn btn-primary"
+        type="button"
+      >
+        Apply
+      </button>
     </div>
   </div>
 </DocumentFragment>
