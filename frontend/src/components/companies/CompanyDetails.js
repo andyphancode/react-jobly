@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
 import JoblyApi from '../../api/api';
 import LoadingSpinner from '../../LoadingSpinner';
+import JobCardList from '../jobs/JobCardList';
 
 /**
  * 
@@ -28,6 +29,7 @@ function CompanyDetails() {
     <div className="CompanyDetails">
       <h5>{company.name}</h5>
       <p>{company.description}</p>
+      <JobCardList jobs={company.jobs}/>
     </div>
   );
 };
