@@ -126,7 +126,7 @@ function ProfileForm() {
       </FormGroup>
       {formErrors.length ?
         (formErrors.map(err => (
-          <Alert color="danger">{err}</Alert>
+          <Alert className="mt-3" color="danger">{err}</Alert>
         ))) :
         null
       }
@@ -136,7 +136,7 @@ function ProfileForm() {
       </Button>
 
       {saveSuccessful ?
-       <Alert>Changes saved successfully.</Alert>
+       <Alert className="mt-3">Changes saved successfully.</Alert>
         :
         null
       }
