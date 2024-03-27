@@ -11,7 +11,8 @@ import useLocalStorage from './useLocalStorage';
 function App() {
 
   const [currentUser, setCurrentUser] = useState(null);
-  const [token, setToken] = useLocalStorage(null);
+  const [token, setToken] = useLocalStorage("jobly-token");
+
 
   // Logs user out
   function logout() {
