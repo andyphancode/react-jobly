@@ -6,11 +6,12 @@ import React, { useState, useEffect, useContext } from "react";
 import JoblyApi from './api/api';
 import UserContext from './components/UserContext';
 import {jwtDecode} from "jwt-decode";
+import useLocalStorage from './useLocalStorage';
 
 function App() {
 
   const [currentUser, setCurrentUser] = useState(null);
-  const [token, setToken] = useState(null);
+  const [token, setToken] = useLocalStorage(null);
 
   // Logs user out
   function logout() {
