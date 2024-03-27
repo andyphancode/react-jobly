@@ -4,7 +4,7 @@ import {Form, FormGroup, Input, Label, Button} from "reactstrap";
 
 /**
  * 
- *  Login form which calls login function prop. On successful login, redirects to /companies.
+ *  Login form which calls login function prop. On successful login, redirects to /.
  * 
  */
 
@@ -20,7 +20,7 @@ function LoginForm({ login }) {
     evt.preventDefault();
     let result = await login(formData);
     if (result.success) {
-      navigate("/companies")
+      navigate("/")
     } else {
       setFormErrors(result.errors);
     }
@@ -44,6 +44,7 @@ function LoginForm({ login }) {
           onChange={handleChange}
           value={formData.username}
           required
+          autoComplete='off'
         />
         <Label for="username">
           Username
@@ -58,6 +59,7 @@ function LoginForm({ login }) {
           onChange={handleChange}
           value={formData.password}
           required
+          autoComplete='off'
         />
         <Label for="password">
           Password

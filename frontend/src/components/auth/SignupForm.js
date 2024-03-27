@@ -4,7 +4,7 @@ import {Form, FormGroup, Label, Input, Button} from "reactstrap";
 
 /**
  *
- * Signup form while calls signup function prop. Upon successful signup, redirects to /companies.
+ * Signup form while calls signup function prop. Upon successful signup, redirects to /.
  * 
  */
 
@@ -23,7 +23,7 @@ function SignupForm({ signup }) {
     evt.preventDefault();
     let result = await signup(formData);
     if (result.success) {
-      navigate("/companies");
+      navigate("/");
     } else {
       setFormErrors(result.errors);
     }
@@ -47,6 +47,7 @@ function SignupForm({ signup }) {
           onChange={handleChange}
           value={formData.username}
           required
+          autoComplete='off'
         />
         <Label for="username">
           Username
@@ -61,6 +62,7 @@ function SignupForm({ signup }) {
           onChange={handleChange}
           value={formData.password}
           required
+          autoComplete='off'
         />
         <Label for="password">
           Password
@@ -75,6 +77,7 @@ function SignupForm({ signup }) {
           onChange={handleChange}
           value={formData.firstName}
           required
+          autoComplete='off'
         />
         <Label for="firstName">
           First Name
@@ -89,6 +92,7 @@ function SignupForm({ signup }) {
           onChange={handleChange}
           value={formData.lastName}
           required
+          autoComplete='off'
         />
         <Label for="lastName">
           Last Name
@@ -103,6 +107,7 @@ function SignupForm({ signup }) {
           onChange={handleChange}
           value={formData.email}
           required
+          autoComplete='off'
         />
         <Label for="email">
           Email
