@@ -20,6 +20,7 @@ function Routing({ login, signup }) {
         <Route path="/login" element={<LoginForm login={login}/>} />
         <Route path="/signup" element={<SignupForm signup={signup}/>} />
         <Route path="/profile" element={<ProfileForm/>} />
+        <Route path="*" element={<p>Nothing here! 404.</p>}/>
       </Routes>        
   );
 };
