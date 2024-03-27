@@ -25,7 +25,7 @@ function NavBar({ logout }) {
               <NavLink href="/profile">Profile</NavLink>
           </NavItem>
           <NavItem className="me-4">
-              <NavLink href="/" onClick={logout}>Logout {currentUser.username}</NavLink>
+              <NavLink href="/" onClick={logout}>Logout {currentUser.firstName || currentUser.username}</NavLink>
           </NavItem>
         </Nav>          
 
