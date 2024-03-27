@@ -5,6 +5,7 @@ import { BrowserRouter as Router} from "react-router-dom";
 import React, { useState, useEffect, useContext } from "react";
 import JoblyApi from './api/api';
 import UserContext from './components/UserContext';
+import {jwtDecode} from "jwt-decode";
 
 function App() {
 
@@ -16,6 +17,23 @@ function App() {
     setCurrentUser(null);
     setToken(null);
   }
+
+  useEffect(function loadUserInfo() {
+    async function getCurrentUserInfo() {
+      if(token) {
+        try {
+          let { username } = jwtDecode(token);
+          JoblyApi.token = token;
+          let currentUser = await JoblyApi.getCurrentUser(username);
+          setCurrentUser(currentUser);
+        } catch (err) {
+          console.error(err);
+          setCurrentUser(null);
+        }
+      }
+    }
+    getCurrentUserInfo();
+  }, [token])
 
   // Signs up user
   async function signup(signupData) {
