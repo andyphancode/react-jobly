@@ -8,20 +8,50 @@ import JobList from '../jobs/JobList';
 import LoginForm from '../auth/LoginForm';
 import SignupForm from '../auth/SignupForm';
 import ProfileForm from '../profile/ProfileForm';
-
+import ProtectedRoute from './ProtectedRoute';
 
 function Routing({ login, signup }) {
+
   return (
-      <Routes>
-        <Route path="/" element={<Homepage/>} />
-        <Route path="/companies" element={<CompanyList/>} />
-        <Route path="/companies/:handle" element={<CompanyDetails/>} />
-        <Route path="/jobs" element={<JobList/>} />
-        <Route path="/login" element={<LoginForm login={login}/>} />
-        <Route path="/signup" element={<SignupForm signup={signup}/>} />
-        <Route path="/profile" element={<ProfileForm/>} />
-        <Route path="*" element={<p>Nothing here! 404.</p>}/>
-      </Routes>        
+  <Routes>
+    <Route path="/" element={<Homepage />} />
+    <Route
+      path="/companies"
+      element={
+        <ProtectedRoute>
+          <CompanyList />
+        </ProtectedRoute>
+      }
+    />
+    <Route 
+      path="/companies/:handle" 
+      element={
+        <ProtectedRoute>
+          <CompanyDetails/>            
+        </ProtectedRoute>
+      }
+        
+    />
+    <Route
+      path="/jobs"
+      element={
+        <ProtectedRoute>
+          <JobList />
+        </ProtectedRoute>
+      }
+    />
+    <Route
+      path="/profile"
+      element={
+        <ProtectedRoute>
+          <ProfileForm />
+        </ProtectedRoute>
+      }
+    />
+    <Route path="*" element={<p>Nothing here! 404.</p>} />
+    <Route path="/login" element={<LoginForm login={login} />}/>
+    <Route path="/signup" element={<SignupForm signup={signup} />}/>
+  </Routes>
   );
 };
 
