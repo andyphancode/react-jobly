@@ -64,19 +64,9 @@ exports[`matches snapshot 1`] = `
           >
             <a
               class="nav-link"
-              href="/login"
+              href="/"
             >
-              Login
-            </a>
-          </li>
-          <li
-            class="me-4 nav-item"
-          >
-            <a
-              class="nav-link"
-              href="/signup"
-            >
-              Signup
+              Logout
             </a>
           </li>
         </ul>

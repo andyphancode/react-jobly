@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot with no jobs 1`] = `
+<DocumentFragment>
+  <div
+    class="LoadingSpinner"
+  >
+    <h1
+      aria-label="hourglass"
+      class="spinning-text"
+      role="img"
+    >
+      ⌛
+    </h1>
+    Fetching results...
+  </div>
+</DocumentFragment>
+`;
