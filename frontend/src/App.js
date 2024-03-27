@@ -7,18 +7,15 @@ import JoblyApi from './api/api';
 import UserContext from './components/UserContext';
 import {jwtDecode} from "jwt-decode";
 import useLocalStorage from './useLocalStorage';
+import LoadingSpinner from './LoadingSpinner';
 
 function App() {
-
+  const [userInfoLoaded, setUserInfoLoaded] = useState(false);
   const [currentUser, setCurrentUser] = useState(null);
   const [token, setToken] = useLocalStorage("jobly-token");
 
 
-  // Logs user out
-  function logout() {
-    setCurrentUser(null);
-    setToken(null);
-  }
+
 
   useEffect(function loadUserInfo() {
     async function getCurrentUserInfo() {
@@ -33,9 +30,17 @@ function App() {
           setCurrentUser(null);
         }
       }
+      setUserInfoLoaded(true);
     }
+    setUserInfoLoaded(false);
     getCurrentUserInfo();
   }, [token])
+
+  // Logs user out
+  function logout() {
+    setCurrentUser(null);
+    setToken(null);
+  }
 
   // Signs up user
   async function signup(signupData) {
@@ -60,6 +65,8 @@ function App() {
       return { success: false, errors };
     }
   }
+
+  if (!userInfoLoaded) return <LoadingSpinner />;
 
   return (
     <div className="App">
