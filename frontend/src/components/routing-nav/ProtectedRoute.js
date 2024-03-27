@@ -4,7 +4,7 @@ import { Navigate } from "react-router-dom";
 function ProtectedRoute({ children }) {
     const token = window.localStorage.getItem("jobly-token");
 
-    if(token=="undefined") {
+    if(token==="undefined") {
         return <Navigate to="/login" replace/>
     }
 
