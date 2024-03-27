@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useContext, useState, useEffect } from "react";
 import "./JobCard.css";
-import { Card, CardTitle, CardBody, CardText, CardSubtitle } from "reactstrap";
+import { Button, Card, CardTitle, CardBody, CardText, CardSubtitle } from "reactstrap";
+import UserContext from "../UserContext";
 
 /**
  * 
@@ -11,6 +12,22 @@ import { Card, CardTitle, CardBody, CardText, CardSubtitle } from "reactstrap";
 
 
 function JobCard({ id, title, salary, equity, companyName }) {
+
+    const { hasAppliedToJob, apply } = useContext(UserContext);
+    const [applied, setApplied] = useState();
+
+    useEffect(function updateApplied() {
+        setApplied(hasAppliedToJob(id));
+    }, [id, hasAppliedToJob]);
+
+    async function handleApply(evt) {
+        evt.preventDefault();
+        if(!hasAppliedToJob(id)) {
+            apply(id);
+            setApplied(true);            
+        }
+    }
+
     return (
         <Card className="JobCard my-3">
             <CardBody>
@@ -21,6 +38,13 @@ function JobCard({ id, title, salary, equity, companyName }) {
                     <br></br>
                     Equity: {equityConverter(equity)}%
                 </CardText>
+                <Button 
+                    color="primary"
+                    onClick={handleApply}
+                    disabled={applied}
+                >
+                    {applied ? "Applied" : "Apply"}
+                </Button>
             </CardBody>
         </Card>
     )
