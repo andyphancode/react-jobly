@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <a
+    class="CompanyCard"
+    href="/companies/random"
+  >
+    <div
+      class="my-3 card"
+    >
+      <div
+        class="card-body"
+      >
+        <h4
+          class="CardTitle card-title"
+        >
+          Random
+        </h4>
+        <p
+          class="card-text"
+        >
+          Random company.
+        </p>
+      </div>
+    </div>
+  </a>
+</DocumentFragment>
+`;

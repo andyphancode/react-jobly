@@ -1,0 +1,79 @@
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import {Form, FormGroup, Input, Label, Button} from "reactstrap";
+
+/**
+ * 
+ *  Login form which calls login function prop. On successful login, redirects to /companies.
+ * 
+ */
+
+function LoginForm({ login }) {
+  const navigate = useNavigate();
+  const [formData, setFormData] = useState({
+    username: "",
+    password: "",
+  });
+  const [formErrors, setFormErrors] = useState([]);
+
+  async function handleSubmit(evt) {
+    evt.preventDefault();
+    let result = await login(formData);
+    if (result.success) {
+      navigate("/companies")
+    } else {
+      setFormErrors(result.errors);
+    }
+  }
+
+  /** Update form data field */
+  function handleChange(evt) {
+    const { name, value } = evt.target;
+    setFormData(l => ({ ...l, [name]: value }));
+  }
+
+  return (
+    <Form className="LoginForm" onSubmit={handleSubmit}>
+      <h1 className="mb-3">Log In</h1>
+      <FormGroup floating>
+        <Input
+          id="username"
+          name="username"
+          placeholder="Username"
+          type="username"
+          onChange={handleChange}
+          value={formData.username}
+          required
+        />
+        <Label for="username">
+          Username
+        </Label>
+      </FormGroup>
+      <FormGroup floating>
+        <Input
+          id="password"
+          name="password"
+          placeholder="Password"
+          type="password"
+          onChange={handleChange}
+          value={formData.password}
+          required
+        />
+        <Label for="password">
+          Password
+        </Label>
+      </FormGroup>
+      {formErrors.length ?
+        (formErrors.map(err => (
+          <p>{err}</p>
+        ))) :
+        null
+      }
+      <Button color="primary">
+        Login
+      </Button>
+    </Form>
+  );
+};
+
+export default LoginForm;

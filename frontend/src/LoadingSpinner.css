@@ -1,0 +1,19 @@
+.LoadingSpinner {
+    color: white;
+    text-shadow: 
+    -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000; 
+}
+
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+  
+.spinning-text {
+    animation: spin 2s linear infinite; /* Change duration and timing function as needed */
+}
+  
