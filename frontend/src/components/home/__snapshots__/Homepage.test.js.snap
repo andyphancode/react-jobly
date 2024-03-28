@@ -2,20 +2,76 @@
 
 exports[`matches snapshot 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    class="Homepage"
+  >
     <h1>
-      Welcome to our website!
+      Welcome back, test.
     </h1>
+    <div
+      class="row"
+    >
+      <div
+        class="col"
+      >
+        <a
+          href="/companies"
+        >
+          <button
+            class="home-button me-3 btn btn-primary"
+          >
+            Find Companies
+          </button>
+        </a>
+        <a
+          href="/jobs"
+        >
+          <button
+            class="home-button btn btn-primary"
+          >
+            Find Jobs
+          </button>
+        </a>
+      </div>
+    </div>
   </div>
 </DocumentFragment>
 `;
 
 exports[`matches snapshot when logged out 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    class="Homepage"
+  >
     <h1>
-      Welcome to our website!
+      Welcome to Jobly!
     </h1>
+    <div
+      class="mt-3 row"
+    >
+      <div
+        class="col"
+      >
+        <a
+          href="/login"
+        >
+          <button
+            class="home-button me-3 btn btn-primary"
+          >
+            Login
+          </button>
+        </a>
+        <a
+          href="/signup"
+        >
+          <button
+            class="home-button btn btn-primary"
+          >
+            Signup
+          </button>
+        </a>
+      </div>
+    </div>
   </div>
 </DocumentFragment>
 `;

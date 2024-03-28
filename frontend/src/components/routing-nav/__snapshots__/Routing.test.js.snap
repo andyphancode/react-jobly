@@ -1,5 +1,43 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="Homepage"
+  >
+    <h1>
+      Welcome back, test.
+    </h1>
+    <div
+      class="row"
+    >
+      <div
+        class="col"
+      >
+        <a
+          href="/companies"
+        >
+          <button
+            class="home-button me-3 btn btn-primary"
+          >
+            Find Companies
+          </button>
+        </a>
+        <a
+          href="/jobs"
+        >
+          <button
+            class="home-button btn btn-primary"
+          >
+            Find Jobs
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
 exports[`renders without crashing 1`] = `
 <DocumentFragment>
   <div>
