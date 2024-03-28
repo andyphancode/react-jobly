@@ -1,0 +1,9 @@
+.Homepage {
+    padding-top: 15vh;
+    color: white;
+    text-shadow: 2px 2px 5px #34302f;
+}
+
+.Homepage .home-button {
+    text-shadow: 2px 2px 5px #34302f;
+}
