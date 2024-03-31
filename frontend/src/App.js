@@ -80,7 +80,7 @@ function App() {
     }
   }
 
-  if (!userInfoLoaded) return <LoadingSpinner />;
+  if (!userInfoLoaded) return null;
 
   return (
     <div className="App">
