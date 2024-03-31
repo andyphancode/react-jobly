@@ -37,13 +37,3 @@ exports[`matches snapshot 1`] = `
   </div>
 </DocumentFragment>
 `;
-
-exports[`renders without crashing 1`] = `
-<DocumentFragment>
-  <div>
-    <h1>
-      Welcome to our website!
-    </h1>
-  </div>
-</DocumentFragment>
-`;
