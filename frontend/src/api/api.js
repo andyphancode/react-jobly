@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:3001";
+// change to http://localhost:3001 for dev
+const BASE_URL = "https://react-jobly-backend.vercel.app"
 
 /** API Class.
  *
@@ -24,7 +25,7 @@ class JoblyApi {
     const params = (method === "get")
         ? data
         : {};
-
+    console.debug(url);
     try {
       return (await axios({ url, method, data, params, headers })).data;
     } catch (err) {
@@ -47,6 +48,7 @@ class JoblyApi {
 
   static async getCompanies(name) {
     let res = await this.request("companies", { name });
+    
     return res.companies;
   }
 
