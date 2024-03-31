@@ -1,4 +1,4 @@
-// for development on personal PC
+// // for development on personal PC
 // "use strict";
 // /** Database setup for jobly. */
 // const { Client } = require("pg");
