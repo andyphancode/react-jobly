@@ -1,3 +1,12 @@
 #profile-username {
     background-color: darkgray;
 }
+
+.ProfileForm {
+    color: white;
+    text-shadow: 2px 2px 5px #34302f;
+}
+
+.ProfileForm button {
+    text-shadow: 2px 2px 5px #34302f;
+}
