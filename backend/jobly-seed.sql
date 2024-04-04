@@ -1,4 +1,5 @@
 -- both test users have the password "password"
+-- testadmin deleted after deployment 
 
 INSERT INTO users (username, password, first_name, last_name, email, is_admin)
 VALUES ('testuser',
